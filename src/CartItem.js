@@ -24,6 +24,22 @@ class CartItem extends React.Component{
         });
     }
 
+    decreaseQuantity = () =>{
+        // setstate form 1
+        // this.setState({
+        //     qty : this.state.qty+1
+        // });
+        // setState form 2
+        if (this.state.qty !== 0) {
+            this.setState((prevState)=>{
+                return {
+                    qty: prevState.qty-1
+                }
+            });            
+        }
+    }
+
+
     render(){
         return(
             <div className="cart-item">
@@ -39,17 +55,20 @@ class CartItem extends React.Component{
                         <img 
                          alt="increase"
                          className="action-icons"
-                         src="https://www.flaticon.com/svg/vstatic/svg/992/992651.svg?token=exp=1612903022~hmac=8b1c3de089f225b770cfe8c9c0a38154" 
+                         src="https://www.flaticon.com/svg/vstatic/svg/1828/1828926.svg?token=exp=1613075450~hmac=f79d069f1e4117f36bef97b0f095d9ee" 
                          onClick={this.increaseQuantity}    
                         />
                         <img 
                          alt="decrease" 
                          className="action-icons" 
-                         src="https://www.flaticon.com/svg/vstatic/svg/992/992683.svg?token=exp=1612902963~hmac=bf50674783cde6b835eeb4b7d8b5b634" />
+                         src="https://www.flaticon.com/svg/vstatic/svg/992/992683.svg?token=exp=1613075500~hmac=f163c832e653456357c0dd319dce1d61" 
+                         onClick={this.decreaseQuantity}
+                         />
                         <img 
                          alt="delete" 
                          className="action-icons" 
-                         src="https://www.flaticon.com/svg/vstatic/svg/3096/3096673.svg?token=exp=1612903073~hmac=8ae1de8585b3f061050d2ce124271d26" />
+                         src="https://www.flaticon.com/svg/vstatic/svg/1214/1214428.svg?token=exp=1613075525~hmac=cac67db8afe9bf21771d35d9fbe77a65" 
+                         />
                     </div>
                 </div>
             </div>
